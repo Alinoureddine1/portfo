@@ -1,6 +1,5 @@
-from flask import Flask, render_template, request, redirect, send_file, abort
+from flask import Flask, render_template, request, redirect, send_file, abort, url_for
 import csv
-import os
 
 app = Flask(__name__)
 
@@ -10,13 +9,7 @@ def home():
 
 @app.route('/resume.pdf')
 def pdfviewer():
-    try:
-        return send_file('static/resume.pdf', 
-                         download_name='resume.pdf',
-                         as_attachment=False,
-                         mimetype='application/pdf')
-    except FileNotFoundError:
-        abort(404, description="Resume not found")
+    return redirect(url_for('static', filename='resume.pdf'))
 
 @app.route('/<string:page_name>')
 def html_page(page_name):
@@ -44,10 +37,10 @@ def submit_form():
             data = request.form.to_dict()
             write_to_csv(data)
             return redirect('/thankyou.html')
-        except Exception as e:
-            return f'Error: {str(e)}', 500
-    else:
-        return 'Method not allowed', 405
+        except:
+            return 'Did not save to database', 500
+    return 'Something went wrong', 400
+
 
 @app.route('/git_update', methods=['POST'])
 def git_update():
