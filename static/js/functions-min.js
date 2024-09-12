@@ -349,5 +349,7 @@ $( document ).ready(function() {
   });
   
   $(document).ready(function() {
+    outerNav();
     initWorkSlider();
   });
+  
