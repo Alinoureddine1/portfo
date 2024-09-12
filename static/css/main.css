@@ -1213,47 +1213,18 @@ body {
 }
 
 .about--options {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
-    max-width: 600px;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    margin: 0;
-    padding: 0;
-    list-style: none
-}
+    gap: 20px;
+    justify-content: center; /* Centers the icons */
+    align-items: center;
+    margin-top: 20px;
+  }
 
-.about--options>a {
-    position: relative;
-    width: 150px;
-    height: 75px;
-    text-decoration: none;
-    color: #fff;
-    border: 10px solid #0f33ff;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat
-}
 
-.about--options>a:nth-child(1) {
-    background-image: url("../img/about-winners.jpg")
-}
 
-.about--options>a:nth-child(2) {
-    background-image: url("../img/about-philosophy.jpg")
-}
 
-.about--options>a:nth-child(3) {
-    background-image: url("../img/about-history.jpg")
-}
 
-.about--options>a:hover h3 {
-    bottom: -50px
-}
+
 
 .about--options h3 {
     position: absolute;
@@ -1957,4 +1928,32 @@ img {
   .modal--options a:hover {
     color: #0f33ff;
   }
+ 
+  .about--options a {
+    text-decoration: none;
+    color: #fff; 
+    font-size: 2.5rem;
+    transition: color 0.3s ease;
+  }
   
+  .about--options a:hover {
+    color: #0f33ff; 
+  }
+  
+  .about--options a i {
+    font-size: 2.5rem; 
+  }
+
+  .about--contact h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #fff; /* To match your theme */
+  }
+  
+  .about--contact p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+
+ 

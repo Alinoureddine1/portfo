@@ -5,7 +5,7 @@ import git
 import os
 
 app = Flask(__name__)
-app.secret_key = 'your_secret_key_here'  # Replace with a real secret key
+app.secret_key = os.urandom(24)
 
 @app.route("/")
 def home():
