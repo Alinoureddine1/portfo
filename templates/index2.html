@@ -14,7 +14,7 @@
   
 <!-- notification for small viewports and landscape oriented smartphones -->
 <div class="device-notification">
-  <a class="device-notification--logo" href="#0">
+  <a class="device-notification--logo" href="/">
     <img src="static/img/logo.png" alt="Ali Noureddine">
     <p>Ali Noureddine</p>
   </a>
@@ -41,7 +41,6 @@
             <li><span>Projects</span></li>
             <li><span>About</span></li>
             <li><span>Contact</span></li>
-            <li><span>Hire us</span></li>
           </ul>
         </nav>
         <ul class="l-main-content main-content">
@@ -170,7 +169,7 @@
               <div class="contact--lockup">
                 <div class="modal">
                   <h2>Contact Me</h2>
-                  <form class="contact-form" action="https://formspree.io/f/your_form_id" method="POST">
+                  <form class="contact-form" action="{{ url_for('submit_form') }}" method="POST">
                     <div class="form-group">
                       <input id="name" type="text" name="name" required spellcheck="false">
                       <label for="name">Name</label>
@@ -292,7 +291,6 @@
     <li>Projects</li>
     <li>About</li>
     <li>Contact</li>
-    <li>Hire us</li>
   </ul>
 </div>
 
