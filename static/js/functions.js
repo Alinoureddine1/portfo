@@ -61,6 +61,16 @@ $( document ).ready(function() {
     updateContent(curPos, nextPos, lastItem);
 
   });
+  
+  $('.proj').click(function(){
+    var curActive = $('.side-nav').find('.is-active'),
+        curPos = $('.side-nav').children().index(curActive),
+        lastItem = $('.side-nav').children().length - 1,
+        nextPos = 1; // Set to 1 to always navigate to the "Works" section
+  
+    updateNavs(nextPos);
+    updateContent(curPos, nextPos, lastItem);
+  });
 
   var targetElement = document.getElementById('viewport'),
       mc = new Hammer(targetElement);
