@@ -6,12 +6,17 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return render_template('index.html')
+    return render_template('index2.html')
 
 @app.route('/resume.pdf')
 def pdfviewer():
     return redirect(url_for('static', filename='resume.pdf'))
 
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+                               'favicon.ico', mimetype='image/vnd.microsoft.icon')
+    
 @app.route('/<string:page_name>')
 def html_page(page_name):
     return render_template(page_name)
